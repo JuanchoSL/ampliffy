@@ -59,7 +59,7 @@ Desde el root del proyecto
 
 Desde el root del proyecto
 ```
-./bin/secuence repositories/Lirberia4
+./bin/secuence repositories/Libreria4
 ```
 ```
 ./bin/secuence repositories/Libreria1
