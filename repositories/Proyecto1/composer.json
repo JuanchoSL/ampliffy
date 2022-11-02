@@ -1,0 +1,15 @@
+{
+    "name": "ampliffy/proyecto1",
+    "authors": [
+        {
+            "name": "Juan Sánchez Lecegui",
+            "email": "JuanchoSL@hotmail.com",
+            "homepage": "https://github.com/JuanchoSL/"
+        }
+    ],
+    "require": {
+        "ampliffy/libreria1": "*",
+        "ampliffy/libreria2": "*",
+        "ampliffy/libreria3": "*"
+    }
+}

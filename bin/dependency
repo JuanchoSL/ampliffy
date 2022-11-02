@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+use Ampliffy\Infrastructure\Factory;
+use Ampliffy\Service\Exceptions\EmptyValueException;
+use Ampliffy\Application\GetPipelinesUseCase;
+
+require_once dirname(__DIR__, 1) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'config.php';
+if (empty($argv[1])) {
+    throw new EmptyValueException("The path of the commit origin is mandatory");
+}
+$trigger = Factory::createProjectData($argv[1]);
+if (!array_key_exists($trigger->getName(), FOLDERS_TO_LISTEN)) {
+    exit(0);
+}
+$result = call_user_func(new GetPipelinesUseCase(), FOLDERS_TO_LISTEN, $argv[1], true);
+echo "<pre>" . print_r(array_keys($result), true) . "</pre>";
+exit;

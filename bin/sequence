@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+use Ampliffy\Application\GetDependencySequenceUseCase;
+use Ampliffy\Service\Exceptions\EmptyValueException;
+
+require_once dirname(__DIR__, 1) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'config.php';
+if (empty($argv[1])) {
+    throw new EmptyValueException("The path of the commit origin is mandatory");
+}
+$result = call_user_func(new GetDependencySequenceUseCase(), FOLDERS_TO_LISTEN, $argv[1], true);
+echo "<pre>" . print_r(array_keys($result), true) . "</pre>";
+exit;

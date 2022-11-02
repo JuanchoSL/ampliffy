@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+use Ampliffy\Application\GetTreeUseCase;
+
+require_once dirname(__DIR__, 1) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'config.php';
+$result = call_user_func(new GetTreeUseCase(), FOLDERS_TO_LISTEN);
+echo "<pre>" . print_r($result, true) . "</pre>";
+exit;
