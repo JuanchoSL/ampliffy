@@ -5,7 +5,6 @@ RUN docker-php-ext-install pdo_mysql
 RUN apt-get update && apt-get install -y git zip nano zsh git iputils-ping
 
 WORKDIR /application
-COPY ./public ./public
 COPY ./bin ./bin
 COPY ./src ./src
 COPY ./tests ./tests
@@ -19,8 +18,8 @@ RUN git config --global user.name \'Juan Sánchez\'
 
 COPY etc/docker/php/conf.d/php.ini /usr/local/etc/php/php.ini
 
-COPY etc/docker/php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 RUN pecl install xdebug-3.1.1
+COPY etc/docker/php/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 #&& docker-php-ext-enable xdebug
 
 #COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
