@@ -12,3 +12,5 @@ services:
       working_dir: /application
       volumes:
         - .:/application
+      extra_hosts:
+        - "host.docker.internal:192.168.0.3"
