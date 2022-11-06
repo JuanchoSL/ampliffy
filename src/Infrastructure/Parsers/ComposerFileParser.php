@@ -6,6 +6,7 @@ namespace Ampliffy\Infrastructure\Parsers;
 
 use Ampliffy\Service\Contracts\ProjectDataParserInterface;
 use Ampliffy\Infrastructure\Parsers\FileParser;
+use Ampliffy\Service\Exceptions\NotFoundException;
 
 class ComposerFileParser implements ProjectDataParserInterface
 {
